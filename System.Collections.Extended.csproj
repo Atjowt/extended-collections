@@ -4,6 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>System.Collections.Extended</Title>
+    <Authors>Atjowt</Authors>
+    <PackageProjectUrl>https://github.com/Atjowt/extended-collections</PackageProjectUrl>
+    <Description>More collections!</Description>
+    <PackageIcon>icon.png</PackageIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PackageTags>system.collections.extended; system.collections; collections; collection; deque; trie; prefix tree; heap; min heap; max heap</PackageTags>
+    <PackageId>MoreCollections_System.Collections.Extended</PackageId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\Downloads\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
