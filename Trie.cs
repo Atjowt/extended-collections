@@ -3,6 +3,28 @@
 public class Trie<T> where T : notnull
 {
     /// <summary>
+    /// Initializes a new <see cref="Trie{T}"/>.
+    /// </summary>
+    public Trie()
+    {
+        Children = new();
+        IsTerminal = false;
+    }
+
+    /// <summary>
+    /// Initializes a new <see cref="Trie{T}"/> from a collection of <paramref name="collections"/>.
+    /// </summary>
+    public Trie(IEnumerable<IEnumerable<T>> collections)
+    {
+        Children = new();
+        IsTerminal = false;
+        foreach (IEnumerable<T> collection in collections)
+        {
+            Insert(collection);
+        }
+    }
+
+    /// <summary>
     /// The children nodes of this <see cref="Trie{T}"/> node, which may be accessed by providing a key <typeparamref name="T"/>.
     /// </summary>
     public Dictionary<T, Trie<T>> Children { get; set; }
@@ -11,15 +33,6 @@ public class Trie<T> where T : notnull
     /// A flag to determine whether this <see cref="Trie{T}"/> node is the end of a collection.
     /// </summary>
     public bool IsTerminal { get; set; }
-
-    /// <summary>
-    /// Initializes a new <see cref="Trie{T}"/>.
-    /// </summary>
-    public Trie()
-    {
-        Children = new();
-        IsTerminal = false;
-    }
 
     /// <summary>
     /// Inserts a <paramref name="collection"/> to the <see cref="Trie{T}"/>.

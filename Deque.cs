@@ -21,6 +21,19 @@ public class Deque<T> : IEnumerable<T>
     }
 
     /// <summary>
+    /// Initializes a new <see cref="Deque{T}"/> from a <paramref name="collection"/>.
+    /// </summary>
+    /// <param name="capacity">The initial capacity of the <see cref="Deque{T}"/>.</param>
+    public Deque(IEnumerable<T> collection)
+    {
+        _items = collection.ToArray();
+        _empty = (new T[1])[0];
+
+        _left = 0;
+        _right = Decrement(_left);
+    }
+
+    /// <summary>
     /// The maximum capacity of the <see cref="Deque{T}"/>.
     /// </summary>
     public int Capacity => _items.Length;
